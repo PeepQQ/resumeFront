@@ -1,0 +1,401 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Nikita Prolat — Frontend Developer</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+        font-size: 12.5px; /* Уменьшено для компактности */
+        line-height: 1.4;
+        color: #1f2937;
+        background: #fff;
+        padding: 24px 32px;
+        max-width: 900px; /* Немного шире для двух колонок */
+        margin: 0 auto;
+      }
+
+      /* --- ШАПКА --- */
+      .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        margin-bottom: 16px;
+        padding-bottom: 12px;
+        border-bottom: 2px solid #1f2937;
+        flex-wrap: wrap;
+        gap: 12px;
+      }
+      .header-left h1 {
+        font-size: 24px;
+        font-weight: 800;
+        letter-spacing: -0.01em;
+        margin-bottom: 2px;
+      }
+      .header-left .role {
+        font-size: 13px;
+        font-weight: 600;
+        color: #2563eb;
+      }
+      .header-right .contacts {
+        font-size: 11.5px;
+        color: #4b5563;
+        text-align: right;
+        line-height: 1.5;
+      }
+      .header-right .contacts a {
+        color: #2563eb;
+        text-decoration: none;
+      }
+
+      /* --- СЕТКА --- */
+      .resume-layout {
+        display: grid;
+        grid-template-columns: 240px 1fr; /* Левая колонка 240px, правая - остальное */
+        gap: 24px;
+        align-items: start;
+      }
+
+      /* --- ОБЩИЕ СЕКЦИИ --- */
+      .section {
+        margin-bottom: 16px;
+      }
+      .section:last-child {
+        margin-bottom: 0;
+      }
+      .section h2 {
+        font-size: 13px;
+        font-weight: 800;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        color: #1f2937;
+        margin-bottom: 8px;
+        padding-bottom: 4px;
+        border-bottom: 1px solid #e5e7eb;
+      }
+
+      /* Левая колонка */
+      .sidebar .about p {
+        font-size: 11.5px;
+        margin-bottom: 6px;
+        text-align: justify;
+      }
+      .sidebar ul li {
+        font-size: 11.5px;
+      }
+
+      /* --- ОПЫТ РАБОТЫ --- */
+      .job {
+        margin-bottom: 14px;
+        page-break-inside: avoid; /* Чтобы блок не разрывался при печати */
+      }
+      .job:last-child {
+        margin-bottom: 0;
+      }
+      .job-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        flex-wrap: wrap;
+        gap: 6px;
+        margin-bottom: 3px;
+      }
+      .job-title {
+        font-size: 13px;
+        font-weight: 700;
+      }
+      .job-title .company {
+        color: #2563eb;
+      }
+      .job-period {
+        font-size: 11.5px;
+        color: #6b7280;
+        white-space: nowrap;
+      }
+
+      .job-stack {
+        font-size: 11px;
+        color: #4b5563;
+        background: #f3f4f6;
+        padding: 4px 7px;
+        border-radius: 4px;
+        margin: 4px 0 6px;
+        line-height: 1.35;
+      }
+      .job-stack strong {
+        color: #1f2937;
+      }
+
+      /* --- СПИСКИ --- */
+      ul {
+        list-style: none;
+        padding-left: 0;
+      }
+      ul li {
+        position: relative;
+        padding-left: 12px;
+        font-size: 12px;
+        margin-bottom: 2px;
+        line-height: 1.35;
+      }
+      ul li::before {
+        content: "•";
+        position: absolute;
+        left: 0;
+        color: #2563eb;
+        font-weight: 700;
+      }
+      ul li a {
+        color: #2563eb;
+        text-decoration: none;
+      }
+
+      /* --- ПЕЧАТЬ --- */
+      @media print {
+        body {
+          padding: 0;
+          font-size: 11.5px;
+          max-width: 100%;
+        }
+        .header h1 {
+          font-size: 22px;
+        }
+        .resume-layout {
+          gap: 20px;
+        }
+        a {
+          color: #1f2937;
+          text-decoration: none;
+        }
+        .job-stack {
+          background: none;
+          border: 1px solid #e5e7eb;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- ШАПКА -->
+    <div class="header">
+      <div class="header-left">
+        <h1>Nikita Prolat</h1>
+        <div class="role">
+          Frontend Developer (React / Next.js / TypeScript)
+        </div>
+      </div>
+      <div class="header-right">
+        <div class="contacts">
+          Минск / Remote / Relocation<br />
+          Telegram:
+          <a href="https://t.me/peep0001" target="_blank">@peep0001</a> ·
+          GitHub:
+          <a href="https://github.com/PeepQQ" target="_blank"
+            >github.com/PeepQQ</a
+          ><br />
+          Email:
+          <a href="mailto:peepq3266@gmail.com" target="_blank"
+            >peepq3266@gmail.com</a
+          >
+        </div>
+      </div>
+    </div>
+
+    <!-- ОСНОВНОЙ КОНТЕНТ (2 КОЛОНКИ) -->
+    <div class="resume-layout">
+      <!-- ЛЕВАЯ КОЛОНКА -->
+      <div class="sidebar">
+        <div class="section about">
+          <h2>О себе</h2>
+          <p>
+            Frontend-разработчик с коммерческим опытом более 2,5 лет. Основной
+            стек — React, Next.js и TypeScript.
+          </p>
+          <p>
+            Имею опыт разработки и поддержки крупных веб-приложений, торговых
+            платформ, административных панелей и интернет-магазинов. Работал со
+            сложными формами, таблицами, динамическими интерфейсами, управлением
+            состояния и интеграцией с REST API.
+          </p>
+          <p>
+            Также имею опыт работы с Backend на C# (ASP.NET), PHP (Laravel) и
+            Node.js (NestJS). Умею разбираться в существующем коде, работать с
+            Git и самостоятельно реализовывать функциональность от интерфейса до
+            взаимодействия с сервером.
+          </p>
+        </div>
+
+        <div class="section">
+          <h2>Навыки</h2>
+          <ul>
+            <li>JavaScript, TypeScript, HTML5, CSS3, SCSS</li>
+            <li>React, Next.js, Redux Toolkit, React Hook Form</li>
+            <li>REST API, Yup, кеширование, оптимизация запросов</li>
+            <li>Node.js, NestJS, PHP, Laravel, C#, ASP.NET</li>
+            <li>Git, Webpack, Prisma, PostgreSQL, WordPress</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- ПРАВАЯ КОЛОНКА -->
+      <div class="main-content">
+        <div class="section">
+          <h2>Опыт работы</h2>
+
+          <div class="job">
+            <div class="job-header">
+              <div class="job-title">
+                <span class="company">Платформы для проведения торгов</span> —
+                Frontend Developer
+              </div>
+              <div class="job-period">Апрель 2024 — Март 2026</div>
+            </div>
+            <div class="job-stack">
+              <strong>Стек:</strong> React, Next.js, TypeScript, Redux Toolkit,
+              React Hook Form, Yup, SCSS, C#, ASP.NET
+            </div>
+            <ul>
+              <li>Разработка и поддержка 5 торговых платформ и 3 лендингов.</li>
+              <li>
+                Работа в команде примерно из 5 Backend-разработчиков.
+                Самостоятельная разработка Frontend-функциональности: от
+                реализации интерфейсов и бизнес-логики до интеграции с Backend
+                API.
+              </li>
+              <li>
+                При необходимости внесение изменений в Backend для реализации и
+                поддержки сквозной функциональности
+              </li>
+              <li>
+                Разработка сложных динамических форм, содержащих более 100
+                полей.
+              </li>
+              <li>
+                Реализация таблиц с фильтрацией, сортировкой и серверной
+                пагинацией (10 000+ записей).
+              </li>
+              <li>
+                Разработка личных кабинетов организаторов и участников торгов.
+              </li>
+              <li>
+                Реализация многошаговых сценариев и динамических интерфейсов на
+                основе статусов лотов.
+              </li>
+              <li>
+                Разработка административной панели для управления функционалом
+                платформ.
+              </li>
+              <li>
+                Оптимизация клиентского состояния и запросов к серверу:
+                кеширование, debounce.
+              </li>
+              <li>
+                Участие в миграции проекта с .NET MVC на React + REST API.
+              </li>
+              <li>
+                Разработка динамических каталогов торгов с фильтрацией по
+                статусам и сортировке.
+              </li>
+            </ul>
+          </div>
+
+          <div class="job">
+            <div class="job-header">
+              <div class="job-title">
+                <span class="company">Интернет-магазин на Next.js</span> —
+                Frontend Developer
+              </div>
+              <div class="job-period">Апрель 2026 — Июль 2026</div>
+            </div>
+            <div class="job-stack">
+              <strong>Стек:</strong> Next.js, TypeScript, SCSS, i18n, PHP
+              (Laravel)
+            </div>
+            <ul>
+              <li>
+                Разработка страниц интернет-магазина по макетам Figma
+                (pixel-perfect).
+              </li>
+              <li>
+                Разделение приложения на серверные и клиентские компоненты для
+                оптимизации загрузки.
+              </li>
+              <li>
+                Оптимизация работы с изображениями и скорости загрузки страниц.
+              </li>
+              <li>Реализация мультиязычности с использованием i18n.</li>
+              <li>
+                Соблюдение принципов SOLID, DRY, KISS, семантической вёрстки и
+                accessibility.
+              </li>
+              <li>
+                Проекты:
+                <a
+                  href="https://courses.alfabulls.com/ru/education"
+                  target="_blank"
+                  >courses.alfabulls.com/ru/education</a
+                >,
+                <a
+                  href="https://peepqq.github.io/AlfaBulls_HomePageDemo_NextJs/ru"
+                  target="_blank"
+                  >peepqq.github.io/AlfaBulls_HomePageDemo_NextJs/ru</a
+                >.
+              </li>
+            </ul>
+          </div>
+
+          <div class="job">
+            <div class="job-header">
+              <div class="job-title">
+                <span class="company">Freelance</span> — Frontend / Web
+                Developer
+              </div>
+              <div class="job-period">
+                Ноябрь 2023 — настоящее время(периодически)
+              </div>
+            </div>
+            <ul>
+              <li>Разработка лендингов и веб-страниц.</li>
+              <li>Вёрстка по готовым дизайн-макетам.</li>
+              <li>Доработка и поддержка существующих веб-проектов.</li>
+              <li>Разработка и настройка сайтов на WordPress.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="section">
+          <h2>Личные проекты</h2>
+          <div class="job">
+            <div class="job-header">
+              <div class="job-title">Система учёта и реализации товаров</div>
+            </div>
+            <div class="job-stack">
+              <strong>Стек:</strong> Next.js, React, TypeScript, NestJS, Prisma,
+              PostgreSQL, JWT
+            </div>
+            <ul>
+              <li>
+                GitHub Actions, CI/CD с автоматическим деплоем. Демо приложения
+                по запросу.
+              </li>
+              <li>Разработка клиентской и серверной частей приложения.</li>
+              <li>Проектирование REST API.</li>
+              <li>
+                Реализация авторизации и приглашений пользователей на почту.
+              </li>
+              <li>Разработка системы управления товарами и продажами.</li>
+            </ul>
+            <a href="https://github.com/PeepQQ/shopCrm" target="_blank"
+              >GitHub: https://github.com/PeepQQ/shopCrm</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
